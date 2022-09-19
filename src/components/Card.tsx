@@ -6,13 +6,12 @@ type CardProps = {
 };
 function Card({ cardName, handleGameLogic }: CardProps) {
   return (
-    <div>
-      <button onClick={() => handleGameLogic(cardName)}>
-        <img
-          src={require("../images/" + cardName + ".png")}
-          alt={cardName}
-          style={{ width: 50, height: 50 }}
-        />
+    <div className=" bg-white hover:bg-gray-300 rounded-md shadow-md aspect-square overflow-hidden ">
+      <button
+        className=" min-w-full min-h-full"
+        onClick={() => handleGameLogic(cardName)}
+      >
+        <img src={require("../images/" + cardName + ".png")} alt={cardName} />
       </button>
     </div>
   );
