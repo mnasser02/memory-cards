@@ -1,4 +1,4 @@
-# Fun Tom & Memory Cards Game
+# Tom & Jerry Memory Cards Game
 
 Built with React, Typescript and Tailwind
 
