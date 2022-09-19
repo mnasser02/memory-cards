@@ -1,6 +1,6 @@
 # Fun Tom & Memory Cards Game
 
-Build with React and Typescript
+Built with React, Typescript and Tailwind
 
 ## credits
 
