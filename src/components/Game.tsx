@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardContainer from "./CardContainer";
 import ScoreBoard from "./ScoreBoard";
 
@@ -26,6 +26,7 @@ function Game() {
   const [lost, setLost] = useState(false);
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [cards, setCards] = useState(images);
+
   const shuffle = (newCards: string[]) => {
     newCards.forEach((card, i) => {
       const randomIdx = Math.floor(Math.random() * newCards.length);
@@ -34,9 +35,6 @@ function Game() {
   };
 
   const handleGameLogic = (cardName: string) => {
-    const newCards = [...cards];
-    shuffle(newCards);
-    setCards(newCards);
     if (selectedCards.includes(cardName)) {
       setLost(true);
       setScore(0);
@@ -48,6 +46,13 @@ function Game() {
       setHighScore(Math.max(highScore, score + 1));
     }
   };
+
+  useEffect(() => {
+    const newCards = [...cards];
+    shuffle(newCards);
+    setCards(newCards);
+  }, [score]);
+
   return (
     <div className=" flex flex-col border-orange-700 border-4 mx-12 mb-4 ">
       <ScoreBoard score={score} highScore={highScore}></ScoreBoard>
