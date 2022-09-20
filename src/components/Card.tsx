@@ -6,7 +6,7 @@ type CardProps = {
 };
 function Card({ cardName, handleGameLogic }: CardProps) {
   return (
-    <div className=" bg-white hover:bg-gray-300 rounded-md shadow-md aspect-square overflow-hidden ">
+    <div className=" bg-whit active:bg-red-200 rounded-md shadow-md aspect-square overflow-hidden card">
       <button
         className=" min-w-full min-h-full"
         onClick={() => handleGameLogic(cardName)}

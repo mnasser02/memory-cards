@@ -10,3 +10,9 @@
     font-size: 12px;
   }
 }
+
+@media (hover: hover) {
+  .card:hover {
+    background-color: #e5e7eb;
+  }
+}
