@@ -1,7 +1,8 @@
 # Tom & Jerry Memory Cards Game
 
 Built with React, Typescript and Tailwind
-visit page <a href="https://mnasser02.github.io/memory-cards/">here!</a>
+
+visit <a href="https://mnasser02.github.io/memory-cards/">here!</a>
 ## credits
 
 https://www.freepnglogos.com/pics/tom-and-jerry
