@@ -68,22 +68,24 @@ function Game() {
   }, [score]);
 
   return (
-    <div className=" flex flex-col border-orange-700 border-4 mx-auto mb-4 max-w-screen-lg">
-      <ScoreBoard score={score} highScore={highScore}></ScoreBoard>
-      {lost ? (
-        <p className="text-center text-5xl mt-auto mb-2 text-red-600 text-bold">
-          Oops!
-        </p>
-      ) : (
-        ""
-      )}
-      {won ? (
-        <p className="text-center text-5xl mt-auto mb-2 text-green-600 text-bold">
-          You've WON!!
-        </p>
-      ) : (
-        ""
-      )}
+    <div className="  flex-col border-orange-700 border-4 mx-auto mb-4 max-w-screen-lg">
+      <div className="flex flex-row-reverse relative">
+        <ScoreBoard score={score} highScore={highScore}></ScoreBoard>
+        {lost ? (
+          <p className="feedback absolute text-center text-5xl my-4 text-red-600 text-bold">
+            Oops!
+          </p>
+        ) : (
+          ""
+        )}
+        {won ? (
+          <p className="feedback absolute text-center text-5xl my-4 text-green-600 text-bold">
+            You've WON!!
+          </p>
+        ) : (
+          ""
+        )}
+      </div>
       <CardContainer
         handleGameLogic={handleGameLogic}
         score={score}

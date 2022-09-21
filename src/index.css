@@ -5,9 +5,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.feedback {
+  margin-right: 42%;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 10px;
   }
 }
 
