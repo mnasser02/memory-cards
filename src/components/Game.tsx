@@ -42,7 +42,7 @@ function Game() {
     if (selectedCards.includes(cardName)) {
       setLost(true);
       setScore(0);
-      selectedCards.length = 0;
+      setSelectedCards([]);
     } else {
       if (won) setScore(1);
       else {
@@ -51,7 +51,7 @@ function Game() {
       }
       if (score + 1 === CARDS_NUMBER) {
         setWon(true);
-        selectedCards.length = 0;
+        setSelectedCards([]);
       } else setSelectedCards([...selectedCards, cardName]);
     }
   };
