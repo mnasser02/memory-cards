@@ -657,6 +657,10 @@ video {
   font-family: Special Elite;
 }
 
+.font-secondary{
+  font-family: Short Stack;
+}
+
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
