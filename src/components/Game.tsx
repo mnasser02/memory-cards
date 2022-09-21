@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CardContainer from "./CardContainer";
 import ScoreBoard from "./ScoreBoard";
 
@@ -19,13 +19,15 @@ const images = [
   "tomjerry14",
   "tomjerry15",
 ];
+const CARDS_NUMBER = images.length;
 
 function Game() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(score);
   const [lost, setLost] = useState(false);
+  const [won, setWon] = useState(false);
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
-  const [cards, setCards] = useState(images);
+  const cards = useRef(images);
 
   const shuffle = (newCards: string[]) => {
     newCards.forEach((card, i) => {
@@ -35,22 +37,29 @@ function Game() {
   };
 
   const handleGameLogic = (cardName: string) => {
+    setLost(false);
+    setWon(false);
     if (selectedCards.includes(cardName)) {
       setLost(true);
       setScore(0);
       selectedCards.length = 0;
     } else {
-      setLost(false);
-      setSelectedCards([...selectedCards, cardName]);
-      setScore(1 + score);
-      setHighScore(Math.max(highScore, score + 1));
+      if (won) setScore(1);
+      else {
+        setScore(1 + score);
+        setHighScore(Math.max(highScore, score + 1));
+      }
+      if (score + 1 === CARDS_NUMBER) {
+        setWon(true);
+        selectedCards.length = 0;
+      } else setSelectedCards([...selectedCards, cardName]);
     }
   };
 
   useEffect(() => {
-    const newCards = [...cards];
+    const newCards = [...cards.current];
     shuffle(newCards);
-    setCards(newCards);
+    cards.current = newCards;
   }, [score]);
 
   return (
@@ -63,10 +72,17 @@ function Game() {
       ) : (
         ""
       )}
+      {won ? (
+        <p className="text-center text-5xl mt-auto mb-2 text-green-600 text-bold">
+          You've WON!!
+        </p>
+      ) : (
+        ""
+      )}
       <CardContainer
         handleGameLogic={handleGameLogic}
         score={score}
-        cards={cards}
+        cards={cards.current}
       ></CardContainer>
     </div>
   );
