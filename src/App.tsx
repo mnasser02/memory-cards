@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="font-primary ">
+    <div className="font-secondary ">
       <Header></Header>
       <Game></Game>
     </div>
