@@ -553,6 +553,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -563,9 +571,14 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mx-12{
-  margin-left: 3rem;
-  margin-right: 3rem;
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mb-4{
@@ -616,16 +629,12 @@ video {
   max-width: 1024px;
 }
 
-.max-w-screen-xl{
-  max-width: 1280px;
-}
-
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .grid-cols-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flex-row-reverse{
+  flex-direction: row-reverse;
 }
 
 .flex-col{
@@ -670,10 +679,6 @@ video {
   text-align: right;
 }
 
-.font-primary{
-  font-family: Special Elite;
-}
-
 .font-secondary{
   font-family: Short Stack;
 }
@@ -697,6 +702,11 @@ video {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+.text-green-600{
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
 .text-yellow-600{
   --tw-text-opacity: 1;
   color: rgb(202 138 4 / var(--tw-text-opacity));
@@ -707,15 +717,14 @@ video {
   color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
-.text-green-600{
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
-}
-
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.feedback {
+  margin-right: 42%;
 }
 
 @media (max-width: 768px) {
@@ -724,15 +733,15 @@ video {
   }
 }
 
-@media (hover: hover) {
-  .card:hover {
-    background-color: #e5e7eb;
+@media (max-width: 640px) {
+  html {
+    font-size: 10px;
   }
 }
 
-@media (min-width: 640px){
-  .sm\:grid-cols-4{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+@media (hover: hover) {
+  .card:hover {
+    background-color: #e5e7eb;
   }
 }
 
