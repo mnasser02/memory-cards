@@ -9,7 +9,7 @@ type ContainerProps = {
 
 function CardContainer({ handleGameLogic, score, cards }: ContainerProps) {
   return (
-    <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 w-2/3 gap-2 mx-auto my-2 ">
+    <div className=" grid grid-cols-4 md:grid-cols-5 w-2/3 gap-2 mx-auto my-2 ">
       {cards.map((card) => {
         return (
           <Card

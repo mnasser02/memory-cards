@@ -612,8 +612,20 @@ video {
   min-width: 100%;
 }
 
+.max-w-screen-lg{
+  max-width: 1024px;
+}
+
+.max-w-screen-xl{
+  max-width: 1280px;
+}
+
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -643,6 +655,11 @@ video {
 
 .p-12{
   padding: 3rem;
+}
+
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .text-center{

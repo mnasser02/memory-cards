@@ -18,6 +18,11 @@ const images = [
   "tomjerry13",
   "tomjerry14",
   "tomjerry15",
+  "tomjerry16",
+  "tomjerry17",
+  "tomjerry18",
+  "tomjerry19",
+  "tomjerry20",
 ];
 const CARDS_NUMBER = images.length;
 
@@ -63,7 +68,7 @@ function Game() {
   }, [score]);
 
   return (
-    <div className=" flex flex-col border-orange-700 border-4 mx-12 mb-4 ">
+    <div className=" flex flex-col border-orange-700 border-4 mx-auto mb-4 max-w-screen-lg">
       <ScoreBoard score={score} highScore={highScore}></ScoreBoard>
       {lost ? (
         <p className="text-center text-5xl mt-auto mb-2 text-red-600 text-bold">
